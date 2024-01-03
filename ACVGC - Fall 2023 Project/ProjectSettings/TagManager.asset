@@ -16,6 +16,11 @@ TagManager:
   - BulletB
   - PlayerA
   - PlayerB
+  - InteractObj
+  - Oven
+  - Cut
+  - Submit
+  - Trash
   layers:
   - Default
   - TransparentFX
@@ -55,4 +60,7 @@ TagManager:
     locked: 0
   - name: Player Sprite
     uniqueID: 3883605461
+    locked: 0
+  - name: UI
+    uniqueID: 2805346271
     locked: 0

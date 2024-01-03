@@ -8,9 +8,16 @@ public class PlayerControllerNew : MonoBehaviour
     //Movement
     public float speed;
     public float jump;
+    public float ObjID;
+    public bool ishold;
     float moveVelocity;
     public Sprite idle;
+    public Sprite idleArmUp;
     public Sprite air;
+    public SpriteRenderer playersprite;
+    public GameObject foodsprite;
+    public GameObject meatsprite;
+    
 
     public enum ObjectState
     {
@@ -20,6 +27,11 @@ public class PlayerControllerNew : MonoBehaviour
     }
 
     public ObjectState currentState;
+
+    void Start()
+    {
+        ObjID = 0;
+    }
 
     void Update()
     {
@@ -39,6 +51,28 @@ public class PlayerControllerNew : MonoBehaviour
         }
 
         moveVelocity = 0;
+
+        if (ishold == true)
+        {
+            playersprite.sprite = idleArmUp;
+            
+            if (ObjID == 1 || ObjID >=6)
+            {
+                meatsprite.SetActive(true);
+            }
+            else if (ObjID >= 2 && ObjID < 6)
+            {
+                foodsprite.SetActive(true);
+            }
+        }
+        
+        if (ishold == false)
+        {
+            playersprite.sprite = idle;
+            ObjID = 0;
+            meatsprite.SetActive(false);
+            foodsprite.SetActive(false) ;
+        }
     }
 
     void UpdateJump()

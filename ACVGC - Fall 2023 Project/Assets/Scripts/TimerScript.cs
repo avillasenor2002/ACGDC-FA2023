@@ -7,6 +7,8 @@ public class TimerScript : MonoBehaviour
 {
     public float TimeLeft;
     public bool TimerOn = false;
+    public Image LifeUI;
+    public SpriteRenderer PlantIMG;
 
     public Text timerTxt;
     // Start is called before the first frame update
